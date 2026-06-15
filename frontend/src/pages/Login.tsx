@@ -1,9 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,14 +25,14 @@ function Login() {
       );
 
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem(
-        "user",
-        JSON.stringify(res.data.user)
-      );
+      localStorage.setItem("user", JSON.stringify(res.data.user));
 
       alert("Login Successful");
 
-      navigate("/post-ad");
+      // 🔥 GO BACK TO WHERE USER WANTED
+      const from = (location.state as any)?.from || "/post-ad";
+
+      navigate(from, { replace: true });
 
     } catch (error: any) {
       if (error.response) {

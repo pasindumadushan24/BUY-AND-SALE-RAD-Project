@@ -157,6 +157,8 @@ function AddPost() {
           {loading ? "Posting..." : "Post Ad"}
         </button>
 
+        
+
       </div>
     </div>
   );

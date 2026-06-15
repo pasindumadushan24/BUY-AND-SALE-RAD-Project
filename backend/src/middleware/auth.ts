@@ -5,22 +5,35 @@ interface AuthRequest extends Request {
   user?: any;
 }
 
-export const auth = (req: AuthRequest, res: Response, next: NextFunction) => {
+export const auth = (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
   const header = req.headers.authorization;
 
   if (!header) {
-    return res.status(401).json({ message: "No token" });
+    return res.status(401).json({
+      message: "No token",
+    });
   }
 
   try {
-    // 👉 Bearer token fix
     const token = header.split(" ")[1];
 
-    const decoded = jwt.verify(token, "secretkey");
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_SECRET as string
+    );
+
     req.user = decoded;
 
     next();
   } catch (err) {
-    return res.status(401).json({ message: "Invalid token" });
+    console.log(err);
+
+    return res.status(401).json({
+      message: "Invalid token",
+    });
   }
 };
