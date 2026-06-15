@@ -5,6 +5,8 @@ import { auth } from "../middleware/auth";
 import {
   createPost,
   getPosts,
+    getMyPosts,
+
 } from "../controllers/postController";
 
 
@@ -33,4 +35,9 @@ router.post(
 
 router.get("/", getPosts);
 
+router.get(
+  "/my-posts",
+  auth,
+  getMyPosts
+);
 export default router;

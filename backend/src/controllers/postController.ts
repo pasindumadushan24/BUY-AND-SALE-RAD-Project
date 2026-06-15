@@ -6,6 +6,9 @@ export const createPost = async (
   res: Response
 ) => {
   try {
+  console.log("USER => ", (req as any).user);
+
+
     const files = (req.files as Express.Multer.File[]) || [];
 
     const images = files.map(
@@ -13,7 +16,11 @@ export const createPost = async (
         `http://localhost:5000/uploads/${file.filename}`
     );
 
+
+
     const post = await Post.create({
+       userId: (req as any).user.id,
+
       category: req.body.category,
       subCategory: req.body.subCategory,
       title: req.body.title,
@@ -33,6 +40,38 @@ export const createPost = async (
     });
   }
 };
+
+
+
+
+
+
+
+export const getMyPosts = async (
+  req: any,
+  res: Response
+) => {
+  try {
+    const posts = await Post.find({
+      userId: req.user.id,
+    });
+
+    res.json(posts);
+
+  } catch (error) {
+    res.status(500).json({
+      message: "Error",
+    });
+  }
+};
+
+
+
+
+
+
+
+
 
 export const getPosts = async (
   req: Request,
