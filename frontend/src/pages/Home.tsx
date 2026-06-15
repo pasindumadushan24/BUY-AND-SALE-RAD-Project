@@ -188,12 +188,12 @@ const navigate = useNavigate();
                 Post Ad
               </button>
             </Link> */}
-<button
+{/* <button
   onClick={() => navigate("/login", { state: { from: "/post-ad" } })}
   className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-90 transition shadow-md"
 >
   + Post Ad
-</button>
+</button> */}
 
 
           </div>
