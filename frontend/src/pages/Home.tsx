@@ -71,17 +71,7 @@ const navigate = useNavigate();
             </button>
           </Link> */}
           <button
-  onClick={() => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      navigate("/post-ad");
-    } else {
-      navigate("/login", {
-        state: { from: "/post-ad" },
-      });
-    }
-  }}
+  onClick={() => navigate("/login", { state: { from: "/post-ad" } })}
   className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-90 transition shadow-md"
 >
   + Post Ad
@@ -199,18 +189,8 @@ const navigate = useNavigate();
               </button>
             </Link> */}
 <button
-  onClick={() => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      navigate("/post-ad");
-    } else {
-      navigate("/login", {
-        state: { from: "/post-ad" },
-      });
-    }
-  }}
-  className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
+  onClick={() => navigate("/login", { state: { from: "/post-ad" } })}
+  className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-90 transition shadow-md"
 >
   + Post Ad
 </button>

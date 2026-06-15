@@ -29,7 +29,6 @@ function Login() {
 
       alert("Login Successful");
 
-      // 🔥 GO BACK TO WHERE USER WANTED
       const from = (location.state as any)?.from || "/post-ad";
 
       navigate(from, { replace: true });
