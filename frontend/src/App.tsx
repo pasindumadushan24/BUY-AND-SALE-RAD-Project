@@ -8,12 +8,15 @@ import Register from "./pages/Register";
 import ProtectedRoute from "./routes/ProtectedRoute";
 // import PostAd from "./pages/PostAd";
 import Profile from "./pages/Profile";
+import CategoryPage from "./pages/CategoryPage";
+
 
 function App() {
   return (
    <Routes>
   <Route path="/" element={<Home />} />
   <Route path="/post-ad" element={<AddPost />} />
+  <Route path="/category/:name" element={<CategoryPage />} />
   <Route
         path="/post-ad"
         element={
@@ -34,6 +37,8 @@ function App() {
      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 </Routes>
+
+
   );
 }
 

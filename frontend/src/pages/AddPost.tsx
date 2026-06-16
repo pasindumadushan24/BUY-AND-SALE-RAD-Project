@@ -10,10 +10,14 @@ function AddPost() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [bedrooms, setBedrooms] = useState("");
+const [bathrooms, setBathrooms] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+const [address, setAddress] = useState("");
   const [images, setImages] = useState<File[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // ✅ Protect route
+
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -22,20 +26,20 @@ function AddPost() {
     }
   }, [navigate]);
 
-  // ✅ image handler
+ 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
     setImages(Array.from(e.target.files));
   };
 
-  // ✅ submit function (FIXED 401 ISSUE)
+  
   const submit = async () => {
     try {
       setLoading(true);
 
       const token = localStorage.getItem("token");
 
-      // 🔴 FIX: no token handling
+      
       if (!token) {
         alert("No token found. Please login again");
         navigate("/login");
@@ -61,7 +65,7 @@ function AddPost() {
 
       alert("✅ Post Added Successfully!");
 
-      // reset form
+      
       setCategory("");
       setSubCategory("");
       setTitle("");
@@ -114,6 +118,73 @@ function AddPost() {
             <option>Van</option>
           </select>
         )}
+
+
+
+
+
+
+
+
+
+{category === "Property" && (
+  <select
+    value={subCategory}
+    onChange={(e) => setSubCategory(e.target.value)}
+    className="border p-3 w-full rounded-lg mb-3"
+  >
+    <option value="">Select Property Type</option>
+    <option>House</option>
+    <option>Apartment</option>
+    <option>Land</option>
+    <option>Commercial Building</option>
+    <option>Room for Rent</option>
+  </select>
+)}
+{category === "Property" && (
+  <>
+
+ <input
+      type="number"
+      value={phoneNumber}
+      onChange={(e) => setPhoneNumber(e.target.value)}
+      placeholder="Phone Number"
+      className="border p-3 w-full rounded-lg mb-3"
+    />
+<input
+  type="text"
+  value={address}
+  onChange={(e) => setAddress(e.target.value)}
+  placeholder="Address"
+  className="border p-3 w-full rounded-lg mb-3"
+/>
+
+
+    <input
+      type="number"
+      value={bedrooms}
+      onChange={(e) => setBedrooms(e.target.value)}
+      placeholder="Bedrooms"
+      className="border p-3 w-full rounded-lg mb-3"
+    />
+
+    <input
+      type="number"
+      value={bathrooms}
+      onChange={(e) => setBathrooms(e.target.value)}
+      placeholder="Bathrooms"
+      className="border p-3 w-full rounded-lg mb-3"
+    />
+  </>
+)}
+
+
+
+
+
+
+
+        
 
         {/* Title */}
         <input

@@ -37,6 +37,36 @@ const navigate = useNavigate();
     }
   };
 
+
+
+
+
+{/* CATEGORIES */}
+<div className="max-w-6xl mx-auto px-6 -mt-10">
+  <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+
+    {categories.map((cat, i) => (
+      <div
+        key={i}
+        onClick={() => {
+          const filtered = listings.filter(
+            (item) => item.category === cat.name
+          );
+
+          setListings(filtered);
+        }}
+        className={`cursor-pointer bg-gradient-to-r ${cat.color} text-white p-5 rounded-2xl shadow-lg hover:scale-105 hover:shadow-2xl transition duration-300`}
+      >
+        <div className="text-3xl">{cat.icon}</div>
+        <p className="mt-2 font-semibold">{cat.name}</p>
+      </div>
+    ))}
+
+  </div>
+</div>
+
+  
+
   const filteredListings = listings.filter((item) =>
     item.title?.toLowerCase().includes(search.toLowerCase())
   );
