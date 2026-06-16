@@ -124,6 +124,77 @@ const [address, setAddress] = useState("");
 
 
 
+{category === "Mobiles" && (
+  <select
+    value={subCategory}
+    onChange={(e) => setSubCategory(e.target.value)}
+    className="border p-3 w-full rounded-lg mb-3"
+  >
+    <option value="">Select Mobile Type</option>
+    <option>Smartphone</option>
+    <option>Feature Phone</option>
+    <option>Tablet</option>
+    <option>Accessories</option>
+    <option>Smart Watch</option>
+  </select>
+)}
+
+
+
+
+{category === "Electronics" && (
+  <select
+    value={subCategory}
+    onChange={(e) => setSubCategory(e.target.value)}
+    className="border p-3 w-full rounded-lg mb-3"
+  >
+    <option value="">Select Electronics Type</option>
+    <option>TV</option>
+    <option>Laptop</option>
+    <option>Desktop</option>
+    <option>Camera</option>
+    <option>Home Appliances</option>
+    <option>Audio Devices</option>
+  </select>
+)}
+
+
+{category === "Fashion" && (
+  <select
+    value={subCategory}
+    onChange={(e) => setSubCategory(e.target.value)}
+    className="border p-3 w-full rounded-lg mb-3"
+  >
+    <option value="">Select Fashion Type</option>
+    <option>Men Clothing</option>
+    <option>Women Clothing</option>
+    <option>Kids Wear</option>
+    <option>Shoes</option>
+    <option>Bags</option>
+    <option>Accessories</option>
+  </select>
+)}
+
+
+{category === "Food" && (
+  <select
+    value={subCategory}
+    onChange={(e) => setSubCategory(e.target.value)}
+    className="border p-3 w-full rounded-lg mb-3"
+  >
+    <option value="">Select Food Type</option>
+    <option>Fast Food</option>
+    <option>Rice & Curry</option>
+    <option>Snacks</option>
+    <option>Beverages</option>
+    <option>Bakery Items</option>
+    <option>Vegetarian</option>
+  </select>
+)}
+
+
+
+
 
 
 
