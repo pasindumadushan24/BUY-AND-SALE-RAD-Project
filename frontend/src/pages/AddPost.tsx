@@ -81,18 +81,24 @@ const [address, setAddress] = useState("");
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
-      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl p-6">
+  <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-10 px-4">
+    <div className="max-w-3xl mx-auto">
 
-        <h1 className="text-3xl font-bold text-center text-indigo-600 mb-6">
+      <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-8">
+
+        <h1 className="text-4xl font-extrabold text-center mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
           Create New Ad
         </h1>
+
+        <p className="text-center text-gray-500 mb-8">
+          Sell anything on QuickMarket
+        </p>
 
         {/* Category */}
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="border p-3 w-full rounded-lg mb-3"
+          className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
         >
           <option value="">Select Category</option>
           <option>Vehicles</option>
@@ -103,12 +109,12 @@ const [address, setAddress] = useState("");
           <option>Food</option>
         </select>
 
-        {/* Sub category */}
+        {/* Vehicle */}
         {category === "Vehicles" && (
           <select
             value={subCategory}
             onChange={(e) => setSubCategory(e.target.value)}
-            className="border p-3 w-full rounded-lg mb-3"
+            className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
           >
             <option value="">Select Vehicle Type</option>
             <option>Car</option>
@@ -119,150 +125,131 @@ const [address, setAddress] = useState("");
           </select>
         )}
 
+        {/* Mobiles */}
+        {category === "Mobiles" && (
+          <select
+            value={subCategory}
+            onChange={(e) => setSubCategory(e.target.value)}
+            className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
+          >
+            <option value="">Select Mobile Type</option>
+            <option>Smartphone</option>
+            <option>Feature Phone</option>
+            <option>Tablet</option>
+            <option>Accessories</option>
+            <option>Smart Watch</option>
+          </select>
+        )}
 
+        {/* Electronics */}
+        {category === "Electronics" && (
+          <select
+            value={subCategory}
+            onChange={(e) => setSubCategory(e.target.value)}
+            className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
+          >
+            <option value="">Select Electronics Type</option>
+            <option>TV</option>
+            <option>Laptop</option>
+            <option>Desktop</option>
+            <option>Camera</option>
+            <option>Home Appliances</option>
+            <option>Audio Devices</option>
+          </select>
+        )}
 
+        {/* Fashion */}
+        {category === "Fashion" && (
+          <select
+            value={subCategory}
+            onChange={(e) => setSubCategory(e.target.value)}
+            className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
+          >
+            <option value="">Select Fashion Type</option>
+            <option>Men Clothing</option>
+            <option>Women Clothing</option>
+            <option>Kids Wear</option>
+            <option>Shoes</option>
+            <option>Bags</option>
+            <option>Accessories</option>
+          </select>
+        )}
 
+        {/* Food */}
+        {category === "Food" && (
+          <select
+            value={subCategory}
+            onChange={(e) => setSubCategory(e.target.value)}
+            className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
+          >
+            <option value="">Select Food Type</option>
+            <option>Fast Food</option>
+            <option>Rice & Curry</option>
+            <option>Snacks</option>
+            <option>Beverages</option>
+            <option>Bakery Items</option>
+            <option>Vegetarian</option>
+          </select>
+        )}
 
+        {/* Property */}
+        {category === "Property" && (
+          <>
+            <select
+              value={subCategory}
+              onChange={(e) => setSubCategory(e.target.value)}
+              className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
+            >
+              <option value="">Select Property Type</option>
+              <option>House</option>
+              <option>Apartment</option>
+              <option>Land</option>
+              <option>Commercial Building</option>
+              <option>Room for Rent</option>
+            </select>
 
-{category === "Mobiles" && (
-  <select
-    value={subCategory}
-    onChange={(e) => setSubCategory(e.target.value)}
-    className="border p-3 w-full rounded-lg mb-3"
-  >
-    <option value="">Select Mobile Type</option>
-    <option>Smartphone</option>
-    <option>Feature Phone</option>
-    <option>Tablet</option>
-    <option>Accessories</option>
-    <option>Smart Watch</option>
-  </select>
-)}
+            <input
+              type="number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              placeholder="Phone Number"
+              className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+            />
 
+            <input
+              type="text"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Address"
+              className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+            />
 
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <input
+                type="number"
+                value={bedrooms}
+                onChange={(e) => setBedrooms(e.target.value)}
+                placeholder="Bedrooms"
+                className="border border-gray-300 p-4 rounded-xl"
+              />
 
-
-{category === "Electronics" && (
-  <select
-    value={subCategory}
-    onChange={(e) => setSubCategory(e.target.value)}
-    className="border p-3 w-full rounded-lg mb-3"
-  >
-    <option value="">Select Electronics Type</option>
-    <option>TV</option>
-    <option>Laptop</option>
-    <option>Desktop</option>
-    <option>Camera</option>
-    <option>Home Appliances</option>
-    <option>Audio Devices</option>
-  </select>
-)}
-
-
-{category === "Fashion" && (
-  <select
-    value={subCategory}
-    onChange={(e) => setSubCategory(e.target.value)}
-    className="border p-3 w-full rounded-lg mb-3"
-  >
-    <option value="">Select Fashion Type</option>
-    <option>Men Clothing</option>
-    <option>Women Clothing</option>
-    <option>Kids Wear</option>
-    <option>Shoes</option>
-    <option>Bags</option>
-    <option>Accessories</option>
-  </select>
-)}
-
-
-{category === "Food" && (
-  <select
-    value={subCategory}
-    onChange={(e) => setSubCategory(e.target.value)}
-    className="border p-3 w-full rounded-lg mb-3"
-  >
-    <option value="">Select Food Type</option>
-    <option>Fast Food</option>
-    <option>Rice & Curry</option>
-    <option>Snacks</option>
-    <option>Beverages</option>
-    <option>Bakery Items</option>
-    <option>Vegetarian</option>
-  </select>
-)}
-
-
-
-
-
-
-
-{category === "Property" && (
-  <select
-    value={subCategory}
-    onChange={(e) => setSubCategory(e.target.value)}
-    className="border p-3 w-full rounded-lg mb-3"
-  >
-    <option value="">Select Property Type</option>
-    <option>House</option>
-    <option>Apartment</option>
-    <option>Land</option>
-    <option>Commercial Building</option>
-    <option>Room for Rent</option>
-  </select>
-)}
-{category === "Property" && (
-  <>
-
- <input
-      type="number"
-      value={phoneNumber}
-      onChange={(e) => setPhoneNumber(e.target.value)}
-      placeholder="Phone Number"
-      className="border p-3 w-full rounded-lg mb-3"
-    />
-<input
-  type="text"
-  value={address}
-  onChange={(e) => setAddress(e.target.value)}
-  placeholder="Address"
-  className="border p-3 w-full rounded-lg mb-3"
-/>
-
-
-    <input
-      type="number"
-      value={bedrooms}
-      onChange={(e) => setBedrooms(e.target.value)}
-      placeholder="Bedrooms"
-      className="border p-3 w-full rounded-lg mb-3"
-    />
-
-    <input
-      type="number"
-      value={bathrooms}
-      onChange={(e) => setBathrooms(e.target.value)}
-      placeholder="Bathrooms"
-      className="border p-3 w-full rounded-lg mb-3"
-    />
-  </>
-)}
-
-
-
-
-
-
-
-        
+              <input
+                type="number"
+                value={bathrooms}
+                onChange={(e) => setBathrooms(e.target.value)}
+                placeholder="Bathrooms"
+                className="border border-gray-300 p-4 rounded-xl"
+              />
+            </div>
+          </>
+        )}
 
         {/* Title */}
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
-          className="border p-3 w-full rounded-lg mb-3"
+          className="w-full border border-gray-300 p-4 rounded-xl mb-4"
         />
 
         {/* Description */}
@@ -270,7 +257,8 @@ const [address, setAddress] = useState("");
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Description"
-          className="border p-3 w-full rounded-lg mb-3"
+          rows={5}
+          className="w-full border border-gray-300 p-4 rounded-xl mb-4"
         />
 
         {/* Price */}
@@ -279,31 +267,62 @@ const [address, setAddress] = useState("");
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Price"
           type="number"
-          className="border p-3 w-full rounded-lg mb-3"
+          className="w-full border border-gray-300 p-4 rounded-xl mb-4"
         />
 
-        {/* Images */}
-        <input
-          type="file"
-          multiple
-          onChange={handleImageChange}
-          className="mb-3"
+      {/* Images */}
+<div className="border-2 border-dashed border-indigo-300 rounded-xl p-5 mb-6 bg-indigo-50">
+  <input
+    type="file"
+    multiple
+    onChange={handleImageChange}
+    className="w-full"
+  />
+</div>
+
+{/* Image Preview */}
+{images.length > 0 && (
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    {images.map((img, index) => (
+      <div
+        key={index}
+        className="relative rounded-xl overflow-hidden shadow-md"
+      >
+        <img
+          src={URL.createObjectURL(img)}
+          alt={`preview-${index}`}
+          className="w-full h-32 object-cover"
         />
 
-        {/* Button */}
         <button
-          onClick={submit}
-          disabled={loading}
-          className="w-full bg-indigo-600 text-white py-3 rounded-lg"
+          type="button"
+          onClick={() => {
+            const updated = images.filter(
+              (_, i) => i !== index
+            );
+            setImages(updated);
+          }}
+          className="absolute top-2 right-2 bg-red-500 text-white w-6 h-6 rounded-full"
         >
-          {loading ? "Posting..." : "Post Ad"}
+          ✕
         </button>
+      </div>
+    ))}
+  </div>
+)}
 
-        
+{/* Button */}
+<button
+  onClick={submit}
+  disabled={loading}
+  className="w-full py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-indigo-600 to-purple-600"
+>
+  {loading ? "Posting..." : "🚀 Post Ad"}
+</button>
 
       </div>
     </div>
-  );
+  </div>
+);
 }
-
 export default AddPost;
