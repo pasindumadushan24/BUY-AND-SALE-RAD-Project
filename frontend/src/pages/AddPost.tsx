@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
 function AddPost() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const [bathrooms, setBathrooms] = useState("");
 const [address, setAddress] = useState("");
   const [images, setImages] = useState<File[]>([]);
   const [loading, setLoading] = useState(false);
-
+const [city, setCity] = useState("");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -30,6 +31,11 @@ const [address, setAddress] = useState("");
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
     setImages(Array.from(e.target.files));
+  };
+
+
+   const goHome = () => {
+    navigate("/");
   };
 
   
@@ -52,6 +58,7 @@ const [address, setAddress] = useState("");
       formData.append("title", title);
       formData.append("description", description);
       formData.append("price", price);
+      formData.append("city", city);
 
       images.forEach((img) => {
         formData.append("images", img);
@@ -80,11 +87,55 @@ const [address, setAddress] = useState("");
     }
   };
 
+
+
+  
+
   return (
+
+
   <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-10 px-4">
     <div className="max-w-3xl mx-auto">
+    {/* NAVBAR */}
+<div className="bg-white shadow-md px-6 py-4 flex items-center justify-between mb-6 rounded-xl">
+
+  <h1 className="text-2xl font-bold text-indigo-600">
+    QuickMarket
+  </h1>
+
+  <div className="flex items-center gap-3">
+
+    <button
+            onClick={goHome}
+            className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-lg font-medium"
+          >
+            Home
+          </button>
+
+    <Link to="/login">
+      <button className="px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-100 transition">
+        Login
+      </button>
+    </Link>
+
+    <Link to="/register">
+      <button className="px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-100 transition">
+        Register
+      </button>
+      
+    </Link>
+     <button
+    onClick={() => navigate("/profile")}
+    className="text-3xl text-gray-700 hover:text-indigo-600 transition"
+  >
+    <FaUserCircle />
+    
+  </button>
+  </div>
+</div>
 
       <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-8">
+      
 
         <h1 className="text-4xl font-extrabold text-center mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
           Create New Ad
@@ -93,6 +144,21 @@ const [address, setAddress] = useState("");
         <p className="text-center text-gray-500 mb-8">
           Sell anything on QuickMarket
         </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* Category */}
         <select
@@ -233,6 +299,8 @@ const [address, setAddress] = useState("");
                 className="border border-gray-300 p-4 rounded-xl"
               />
 
+
+
               <input
                 type="number"
                 value={bathrooms}
@@ -261,6 +329,8 @@ const [address, setAddress] = useState("");
           className="w-full border border-gray-300 p-4 rounded-xl mb-4"
         />
 
+
+
         {/* Price */}
         <input
           value={price}
@@ -279,6 +349,15 @@ const [address, setAddress] = useState("");
     className="w-full"
   />
 </div>
+
+<input
+  type="text"
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+  placeholder="City"
+    className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+/>
+
 
 {/* Image Preview */}
 {images.length > 0 && (
