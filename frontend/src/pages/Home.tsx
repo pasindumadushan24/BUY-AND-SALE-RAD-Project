@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
-// import { isLoggedIn } from "../utils/auth";
+
 
 
 function Home() {
@@ -94,12 +94,7 @@ const navigate = useNavigate();
               Register
             </button>
           </Link>
-{/* 
-          <Link to="/post-ad">
-            <button className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-90 transition shadow-md">
-              + Post Ad
-            </button>
-          </Link> */}
+
           <button
   onClick={() => navigate("/login", { state: { from: "/post-ad" } })}
   className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-90 transition shadow-md"
@@ -198,32 +193,7 @@ const navigate = useNavigate();
               Add your first advertisement.
             </p>
 
-            {/* <button
-  onClick={() => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      navigate("/post-ad"); // logged in
-    } else {
-      navigate("/login"); // not logged in
-    }
-  }}
-  className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
->
-  + Post Ad
-</button> */}
-
-            {/* <Link to="/post-ad">
-              <button className="mt-4 bg-indigo-600 text-white px-6 py-3 rounded-xl">
-                Post Ad
-              </button>
-            </Link> */}
-{/* <button
-  onClick={() => navigate("/login", { state: { from: "/post-ad" } })}
-  className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-90 transition shadow-md"
->
-  + Post Ad
-</button> */}
+           
 
 
           </div>
