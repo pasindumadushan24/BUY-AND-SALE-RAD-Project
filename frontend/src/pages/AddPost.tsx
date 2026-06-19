@@ -59,6 +59,10 @@ const [city, setCity] = useState("");
       formData.append("description", description);
       formData.append("price", price);
       formData.append("city", city);
+  formData.append("bedrooms", bedrooms);
+formData.append("bathrooms", bathrooms);
+formData.append("phoneNumber", phoneNumber);
+
 
       images.forEach((img) => {
         formData.append("images", img);
