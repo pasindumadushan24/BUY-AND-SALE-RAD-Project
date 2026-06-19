@@ -2,53 +2,37 @@ import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema(
   {
-    userId: {
-      type: String,
-      required: true,
-    },
+    userId: { type: String, required: true },
+    category: { type: String, required: true },
+    subCategory: { type: String, required: true },
+    city: { type: String, required: true },
 
-    category: {
-      type: String,
-      required: true,
-    },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: Number, required: true },
 
-    subCategory: {
-      type: String,
-      required: true,
-    },
+    images: { type: [String], default: [] },
 
-
-     city: {
-      type: String,
-      required: true,
-    },
-
-
-    //  address: {
-    //   type: String,
-    //   required: true,
-    // },
-
-    
-    title: {
-      type: String,
-      required: true,
-    },
-
-    description: {
-      type: String,
-      required: true,
-    },
-
-    price: {
+    // ✅ ADD THESE
+    bedrooms: {
       type: Number,
-      required: true,
+      default: null,
     },
 
-    images: {
-      type: [String],
-      default: [],
+    bathrooms: {
+      type: Number,
+      default: null,
     },
+
+    phoneNumber: {
+      type: String,
+      default: null,
+    },
+
+    // address: {
+    //   type: String,
+    //   default: null,
+    // },
   },
   {
     timestamps: true,
