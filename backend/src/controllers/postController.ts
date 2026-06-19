@@ -1,93 +1,72 @@
 import { Request, Response } from "express";
 import Post from "../models/Post";
 
-export const createPost = async (
-  req: Request,
-  res: Response
-) => {
+// CREATE POST
+export const createPost = async (req: Request, res: Response) => {
   try {
-  console.log("USER => ", (req as any).user);
-
-
     const files = (req.files as Express.Multer.File[]) || [];
 
     const images = files.map(
-      (file) =>
-        `http://localhost:5000/uploads/${file.filename}`
+      (file) => `http://localhost:5000/uploads/${file.filename}`
     );
 
-
-
-    const post = await Post.create({
-       userId: (req as any).user.id,
-
+    const postData: any = {
+      userId: (req as any).user.id,
       category: req.body.category,
       subCategory: req.body.subCategory,
       title: req.body.title,
       description: req.body.description,
-      price: req.body.price,
+      price: Number(req.body.price),
       city: req.body.city,
-  
       images,
-    });
+    };
 
-    res.status(201).json(post);
+    // property only fields
+    if (req.body.category === "Property") {
+      postData.phoneNumber = req.body.phoneNumber
+        ? req.body.phoneNumber
+        : null;
 
+      postData.address = req.body.address || null;
+
+      postData.bedrooms = req.body.bedrooms
+        ? Number(req.body.bedrooms)
+        : null;
+
+      postData.bathrooms = req.body.bathrooms
+        ? Number(req.body.bathrooms)
+        : null;
+    }
+
+    const post = await Post.create(postData);
+
+    return res.status(201).json(post);
   } catch (error) {
-    console.error(error);
+    console.error("CREATE POST ERROR:", error);
 
-    res.status(500).json({
+    return res.status(500).json({
       message: "Failed to create post",
-      error,
     });
   }
 };
 
-
-
-
-
-
-
-export const getMyPosts = async (
-  req: any,
-  res: Response
-) => {
+// GET MY POSTS
+export const getMyPosts = async (req: any, res: Response) => {
   try {
-    const posts = await Post.find({
-      userId: req.user.id,
-    });
-
-    res.json(posts);
-
+    const posts = await Post.find({ userId: req.user.id });
+    return res.json(posts);
   } catch (error) {
-    res.status(500).json({
-      message: "Error",
-    });
+    return res.status(500).json({ message: "Error" });
   }
 };
 
-
-
-
-
-
-
-
-
-export const getPosts = async (
-  req: Request,
-  res: Response
-) => {
+// GET ALL POSTS
+export const getPosts = async (_req: Request, res: Response) => {
   try {
-    const posts = await Post.find().sort({
-      createdAt: -1,
-    });
-
-    res.json(posts);
-
+    const posts = await Post.find().sort({ createdAt: -1 });
+    return res.json(posts);
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Failed to load posts",
     });
   }
