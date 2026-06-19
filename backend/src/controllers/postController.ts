@@ -26,6 +26,8 @@ export const createPost = async (
       title: req.body.title,
       description: req.body.description,
       price: req.body.price,
+      city: req.body.city,
+  
       images,
     });
 
