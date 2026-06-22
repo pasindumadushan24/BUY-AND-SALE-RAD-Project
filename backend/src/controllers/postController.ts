@@ -60,6 +60,47 @@ export const getMyPosts = async (req: any, res: Response) => {
   }
 };
 
+
+
+
+
+
+//delete post
+export const deletePost = async (req: any, res: Response) => {
+  try {
+    const post = await Post.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({
+        message: "Post not found",
+      });
+    }
+
+    if (post.userId !== req.user.id) {
+      return res.status(403).json({
+        message: "Unauthorized",
+      });
+    }
+
+    await Post.findByIdAndDelete(req.params.id);
+
+    return res.json({
+      message: "Post deleted successfully",
+    });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      message: "Delete failed",
+    });
+  }
+};
+
+
+
+
+
+
 // GET ALL POSTS
 export const getPosts = async (_req: Request, res: Response) => {
   try {
