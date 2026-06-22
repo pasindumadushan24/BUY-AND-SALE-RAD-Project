@@ -10,6 +10,39 @@ function Profile() {
     loadMyPosts();
   }, []);
 
+
+
+
+
+
+  //delete post
+  const deletePost = async (id: string) => {
+  try {
+    const token = localStorage.getItem("token");
+
+    await axios.delete(
+      `http://localhost:5000/api/posts/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    setMyPosts(myPosts.filter((p) => p._id !== id));
+
+    alert("Post deleted");
+  } catch (error) {
+    console.log(error);
+    alert("Delete failed");
+  }
+};
+
+
+
+
+
+
   const loadMyPosts = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -112,17 +145,26 @@ function Profile() {
                   </p>
 
                   <div className="flex gap-2 mt-4">
-                    <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg">
-                      View
-                    </button>
+                  <button
+  onClick={() => navigate(`/post/${post._id}`)}
+  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg"
+>
+  View
+</button>
 
-                    <button className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg">
-                      Edit
-                    </button>
+                 <button
+  onClick={() => navigate(`/edit-post/${post._id}`)}
+  className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg"
+>
+  Edit
+</button>
 
-                    <button className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg">
-                      Delete
-                    </button>
+                 <button
+  onClick={() => deletePost(post._id)}
+  className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg"
+>
+  Delete
+</button>
                   </div>
 
                 </div>
