@@ -12,7 +12,6 @@ import {
 } from "../controllers/postController";
 
 
-
 const router = express.Router();
 
 const storage = multer.diskStorage({
