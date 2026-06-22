@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaUserCircle } from "react-icons/fa";
 
 function PostDetails() {
   const { id } = useParams();
@@ -67,6 +68,13 @@ function PostDetails() {
           >
             Logout
           </button>
+
+                 <button
+              onClick={() => navigate("/profile")}
+              className="text-3xl text-gray-700 hover:text-indigo-600 transition"
+            >
+              <FaUserCircle />
+            </button>
         </div>
       </div>
 
