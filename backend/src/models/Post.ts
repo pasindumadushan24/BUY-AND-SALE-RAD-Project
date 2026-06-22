@@ -13,21 +13,21 @@ const postSchema = new mongoose.Schema(
 
     images: { type: [String], default: [] },
 
-    // ✅ ADD THESE
     bedrooms: {
-      type: Number,
-      default: null,
-    },
+  type: Number,
+},
 
-    bathrooms: {
-      type: Number,
-      default: null,
-    },
+bathrooms: {
+  type: Number,
+},
 
-    phoneNumber: {
-      type: String,
-      default: null,
-    },
+phoneNumber: {
+  type: String,
+},
+
+// address: {
+//   type: String,
+// },
 
     // address: {
     //   type: String,
