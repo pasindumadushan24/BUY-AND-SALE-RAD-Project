@@ -193,7 +193,6 @@ const navigate = useNavigate();
 
            
 
-
           </div>
         ) : (
           <div className="grid md:grid-cols-3 gap-6">
