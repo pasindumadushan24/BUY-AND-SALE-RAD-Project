@@ -23,6 +23,7 @@ app.use(
 
 app.use("/api/posts", postRoutes);
 
+
 mongoose
   .connect(process.env.MONGO_URI!)
   .then(() => {
