@@ -11,7 +11,7 @@ function AddPost() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const [bedrooms, setBedrooms] = useState("");
   const [bathrooms, setBathrooms] = useState("");
@@ -102,7 +102,6 @@ function AddPost() {
 
   return (
 
-
   <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-10 px-4">
     <div className="max-w-3xl mx-auto">
     {/* NAVBAR */}
@@ -153,14 +152,6 @@ function AddPost() {
         <p className="text-center text-gray-500 mb-8">
           Sell anything on QuickMarket
         </p>
-
-
-
-
-
-
-
-
 
 
 
