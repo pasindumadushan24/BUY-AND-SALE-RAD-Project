@@ -8,6 +8,7 @@ export interface IVehicle {
   images: string[];
 }
 
+
 const VehicleSchema = new mongoose.Schema<IVehicle>({
   title: String,
   price: String,
