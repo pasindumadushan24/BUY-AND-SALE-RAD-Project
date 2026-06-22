@@ -99,8 +99,6 @@ export const deletePost = async (req: any, res: Response) => {
 
 
 
-
-
 // GET ALL POSTS
 export const getPosts = async (_req: Request, res: Response) => {
   try {
