@@ -48,6 +48,7 @@ function PostDetails() {
         ))}
       </div>
 
+
       {/* Details */}
       <h1 className="text-3xl font-bold mt-5">
         {post.title}
@@ -72,5 +73,6 @@ function PostDetails() {
     </div>
   );
 }
+
 
 export default PostDetails;
