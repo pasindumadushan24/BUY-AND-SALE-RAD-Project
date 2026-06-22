@@ -27,10 +27,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// 🔒 PROTECTED ROUTE
+//PROTECTED ROUTE
 router.post(
   "/",
-  auth,                 // 👈 IMPORTANT
+  auth,                 
   upload.array("images", 5),
   createPost
 );
