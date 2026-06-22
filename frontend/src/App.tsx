@@ -6,7 +6,6 @@ import PostDetails from "./pages/PostDetails";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProtectedRoute from "./routes/ProtectedRoute";
-// import PostAd from "./pages/PostAd";
 import Profile from "./pages/Profile";
 import CategoryPage from "./pages/CategoryPage";
 
