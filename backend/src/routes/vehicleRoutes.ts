@@ -4,7 +4,7 @@ import Vehicle from "../models/Vehicle";
 
 const router = express.Router();
 
-// 📁 Multer setup
+// Multer setup
 const storage = multer.diskStorage({
   destination: "uploads/",
   filename: (req, file, cb) => {
