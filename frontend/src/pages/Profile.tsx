@@ -79,6 +79,7 @@ function Profile() {
         <h1 className="text-2xl font-bold text-indigo-600">
           My Profile
         </h1>
+        
 
         <div className="flex gap-3">
           <button
