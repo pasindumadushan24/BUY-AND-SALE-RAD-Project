@@ -11,13 +11,17 @@ function AddPost() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+
   const [bedrooms, setBedrooms] = useState("");
-const [bathrooms, setBathrooms] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-const [address, setAddress] = useState("");
+  const [bathrooms, setBathrooms] = useState("");
+
+  const [address, setAddress] = useState("");
   const [images, setImages] = useState<File[]>([]);
   const [loading, setLoading] = useState(false);
-const [city, setCity] = useState("");
+  const [city, setCity] = useState("");
+  
+
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -59,9 +63,10 @@ const [city, setCity] = useState("");
       formData.append("description", description);
       formData.append("price", price);
       formData.append("city", city);
-  formData.append("bedrooms", bedrooms);
-formData.append("bathrooms", bathrooms);
-formData.append("phoneNumber", phoneNumber);
+      formData.append("bedrooms", bedrooms);
+      formData.append("bathrooms", bathrooms);
+      formData.append("phoneNumber", phoneNumber);
+
 
 
       images.forEach((img) => {
