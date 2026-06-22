@@ -41,6 +41,7 @@ router.post("/", upload.array("images", 5), async (req, res) => {
   }
 });
 
+
 /* =========================
    GET ALL VEHICLES
 ========================= */
