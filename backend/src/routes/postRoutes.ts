@@ -6,6 +6,8 @@ import {
   createPost,
   getPosts,
     getMyPosts,
+//delete
+      deletePost,
 
 } from "../controllers/postController";
 
@@ -40,4 +42,9 @@ router.get(
   auth,
   getMyPosts
 );
+
+
+//delete post 
+router.delete("/:id", auth, deletePost);
+
 export default router;
