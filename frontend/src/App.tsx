@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import CategoryPage from "./pages/CategoryPage";
 
 
+
 function App() {
   return (
    <Routes>
