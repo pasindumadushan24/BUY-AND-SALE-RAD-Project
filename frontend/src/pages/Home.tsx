@@ -256,19 +256,47 @@ const navigate = useNavigate();
 
       </div>
 
-      {/* FOOTER */}
-      <div className="mt-16 bg-black text-white py-10 text-center">
+     {/* FOOTER */}
+<footer className="mt-16 bg-gray-900 text-white">
+  <div className="max-w-7xl mx-auto px-6 py-10">
 
-        <h3 className="text-xl font-bold">
-          QuickMarket
-        </h3>
+    <div className="flex flex-col items-center text-center">
 
-        <p className="text-gray-400 mt-2">
-          Modern marketplace experience
-        </p>
+      {/* Logo & Description */}
+      <h3 className="text-3xl font-bold text-white-400">
+        Quick Mart
+      </h3>
 
+      <p className="text-gray-400 mt-2">
+        Buy, Sell & Discover amazing deals.
+      </p>
+
+      {/* Navigation */}
+      <div className="flex gap-6 text-sm mt-6">
+        <a
+          href="/"
+          className="hover:text-indigo-400 transition"
+        >
+          Home
+        </a>
+
+        <a
+          href="/profile"
+          className="hover:text-indigo-400 transition"
+        >
+          Profile
+        </a>
       </div>
 
+    </div>
+
+    {/* Bottom Line */}
+    <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+      © {new Date().getFullYear()} Quick Mart. All rights reserved.
+    </div>
+
+  </div>
+</footer>
     </div>
   );
 }
