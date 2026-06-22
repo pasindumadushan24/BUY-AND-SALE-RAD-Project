@@ -178,7 +178,7 @@ const navigate = useNavigate();
       <div className="max-w-6xl mx-auto px-6 mt-14">
 
         <h2 className="text-2xl font-bold mb-6">
-          🔥 Latest Listings
+           Latest Listings
         </h2>
 
         {filteredListings.length === 0 ? (
@@ -256,11 +256,13 @@ const navigate = useNavigate();
 
       </div>
 
+
      {/* FOOTER */}
 <footer className="mt-16 bg-gray-900 text-white">
   <div className="max-w-7xl mx-auto px-6 py-10">
 
     <div className="flex flex-col items-center text-center">
+
 
       {/* Logo & Description */}
       <h3 className="text-3xl font-bold text-white-400">
