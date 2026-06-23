@@ -36,9 +36,9 @@ if (req.body.category === "Vehicles") {
 
   postData.model = req.body.model || null;
 
-  // postData.gear = req.body.gear || null;
+  postData.gear = req.body.gear || null;
 
-  // postData.fuelType = req.body.fuelType || null;
+  postData.fuelType = req.body.fuelType || null;
 
   // postData.engineCC = req.body.engineCC
   //   ? Number(req.body.engineCC)
