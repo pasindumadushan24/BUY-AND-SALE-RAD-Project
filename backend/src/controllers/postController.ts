@@ -21,6 +21,18 @@ export const createPost = async (req: Request, res: Response) => {
       images,
     };
 
+
+
+
+    // vehicle only fields
+if (req.body.category === "Vehicles") {
+  postData.phoneNumber = req.body.phoneNumber || null;
+
+  postData.year = req.body.year
+    ? Number(req.body.year)
+    : null;
+}
+
     // property only fields
     if (req.body.category === "Property") {
       postData.phoneNumber = req.body.phoneNumber
