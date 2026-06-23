@@ -45,7 +45,6 @@ router.get(
 );
 
 router.put("/:id", auth, updatePost);
-//delete post 
 router.delete("/:id", auth, deletePost);
 
 export default router;
