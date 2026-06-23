@@ -229,6 +229,23 @@ const [engineCC, setEngineCC] = useState("");
       className="w-full border border-gray-300 p-4 rounded-xl mb-4"
     />
 
+ <input
+      type="number"
+      value={mileage}
+      onChange={(e) => setMileage(e.target.value)}
+      placeholder="Mileage"
+      className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+    />
+
+     <input
+      type="number"
+      value={engineCC}
+      onChange={(e) => setEngineCC(e.target.value)}
+      placeholder="Engine CC"
+      className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+    />
+
+
 <div className="grid md:grid-cols-2 gap-4 mb-4">
   <select
     value={fuelType}
