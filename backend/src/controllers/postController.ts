@@ -102,6 +102,8 @@ export const updatePost = async (req: any, res: Response) => {
       });
     }
 
+    //update post
+
     const updatedPost = await Post.findByIdAndUpdate(
       req.params.id,
       {
