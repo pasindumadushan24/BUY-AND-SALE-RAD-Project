@@ -14,9 +14,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-/* =========================
-   CREATE VEHICLE
-========================= */
+
+//Create Vehicle
+
 router.post("/", upload.array("images", 5), async (req, res) => {
   try {
     console.log("🔥 POST HIT");
@@ -41,10 +41,8 @@ router.post("/", upload.array("images", 5), async (req, res) => {
   }
 });
 
+//Get All Vehicle
 
-/* =========================
-   GET ALL VEHICLES
-========================= */
 router.get("/", async (req, res) => {
   try {
     const vehicles = await Vehicle.find();
