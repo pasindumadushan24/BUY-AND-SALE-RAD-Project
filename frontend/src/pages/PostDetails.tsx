@@ -122,6 +122,29 @@ function PostDetails() {
               {post.subCategory}
             </p>
 
+
+{post.category === "Vehicles" && post.year && (
+  <p className="text-sm text-gray-500 mt-1">
+    <span className="font-semibold">
+      Year:
+    </span>{" "}
+    {post.year}
+  </p>
+)}
+
+
+   {post.phoneNumber && (
+              <p className="text-sm text-gray-500 mt-1">
+                <span className="font-semibold">
+                  Phone Number:
+                </span>{" "}
+                {post.phoneNumber}
+              </p>
+            )}
+
+
+
+
             {post.city && (
               <p className="text-sm text-gray-500 mt-1">
                 <span className="font-semibold">
