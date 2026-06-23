@@ -9,6 +9,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Profile from "./pages/Profile";
 import CategoryPage from "./pages/CategoryPage";
 
+import EditPost from "./pages/EditPost";
 
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
           </ProtectedRoute>
         }
       />
+        <Route
+    path="/edit-post/:id"
+    element={<EditPost />}
+  />
   <Route
   path="/profile"
   element={
@@ -37,6 +42,7 @@ function App() {
      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 </Routes>
+
 
 
   );
