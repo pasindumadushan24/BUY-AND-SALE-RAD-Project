@@ -17,4 +17,5 @@ const VehicleSchema = new mongoose.Schema<IVehicle>({
   images: [String],
 });
 
+
 export default mongoose.model<IVehicle>("Vehicle", VehicleSchema);
