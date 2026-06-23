@@ -25,6 +25,12 @@ phoneNumber: {
   type: String,
 },
 
+
+model: {
+  type: String,
+
+},
+
 year: {
   type: Number,
 }
