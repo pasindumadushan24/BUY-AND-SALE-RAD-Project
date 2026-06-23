@@ -41,13 +41,17 @@ gear: {
 
 fuelType: {
   type: String,
-}
+},
+
+mileage: {
+  type: Number,
+},
 
 
-    // address: {
-    //   type: String,
-    //   default: null,
-    // },
+engineCC: {
+  type: Number,
+},
+
   },
   {
     timestamps: true,
