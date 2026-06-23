@@ -122,6 +122,13 @@ function PostDetails() {
               {post.subCategory}
             </p>
 
+            {post.createdAt && (
+  <p className="text-sm text-gray-500 mt-1">
+    <span className="font-semibold">Posted On:</span>{" "}
+    {new Date(post.createdAt).toLocaleString()}
+  </p>
+)}
+
 
 {post.category === "Vehicles" && post.year && (
   <p className="text-sm text-gray-500 mt-1">
