@@ -25,6 +25,10 @@ phoneNumber: {
   type: String,
 },
 
+year: {
+  type: Number,
+}
+
     // address: {
     //   type: String,
     //   default: null,
