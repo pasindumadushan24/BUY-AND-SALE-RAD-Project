@@ -12,6 +12,13 @@ function AddPost() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+const [year, setYear] = useState("");
+// const [mileage, setMileage] = useState("");
+// const [model, setModel] = useState("");
+// const [gear, setGear] = useState("");
+// const [fuelType, setFuelType] = useState("");
+// const [engineCC, setEngineCC] = useState("");
+
 
   const [bedrooms, setBedrooms] = useState("");
   const [bathrooms, setBathrooms] = useState("");
@@ -66,6 +73,7 @@ function AddPost() {
       formData.append("bedrooms", bedrooms);
       formData.append("bathrooms", bathrooms);
       formData.append("phoneNumber", phoneNumber);
+      formData.append("year", year);
 
 
 
@@ -175,21 +183,39 @@ function AddPost() {
           <option>Food</option>
         </select>
 
-        {/* Vehicle */}
-        {category === "Vehicles" && (
-          <select
-            value={subCategory}
-            onChange={(e) => setSubCategory(e.target.value)}
-            className="w-full border border-gray-300 p-4 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500 outline-none"
-          >
-            <option value="">Select Vehicle Type</option>
-            <option>Car</option>
-            <option>Motorcycle</option>
-            <option>Lorry</option>
-            <option>Bus</option>
-            <option>Van</option>
-          </select>
-        )}
+   {category === "Vehicles" && (
+  <>
+    <select
+      value={subCategory}
+      onChange={(e) => setSubCategory(e.target.value)}
+      className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+    >
+      <option value="">Select Vehicle Type</option>
+      <option>Car</option>
+      <option>Motorcycle</option>
+      <option>Lorry</option>
+      <option>Bus</option>
+      <option>Van</option>
+    </select>
+
+    <input
+      type="number"
+      value={year}
+      onChange={(e) => setYear(e.target.value)}
+      placeholder="Year"
+      className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+    />
+
+    <input
+      type="number"
+      value={phoneNumber}
+      onChange={(e) => setPhoneNumber(e.target.value)}
+      placeholder="Phone Number"
+      className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+    />
+  </>
+)}
+        
 
         {/* Mobiles */}
         {category === "Mobiles" && (
