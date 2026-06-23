@@ -104,6 +104,7 @@ function Profile() {
         <h2 className="text-3xl font-bold text-center mb-8">
           My Ads
         </h2>
+        
 
         {myPosts.length === 0 ? (
           <div className="bg-white p-10 rounded-2xl shadow text-center">
