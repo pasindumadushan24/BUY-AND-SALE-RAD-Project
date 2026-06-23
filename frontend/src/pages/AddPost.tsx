@@ -14,7 +14,7 @@ function AddPost() {
   const [phoneNumber, setPhoneNumber] = useState("");
 const [year, setYear] = useState("");
 // const [mileage, setMileage] = useState("");
-// const [model, setModel] = useState("");
+const [model, setModel] = useState("");
 // const [gear, setGear] = useState("");
 // const [fuelType, setFuelType] = useState("");
 // const [engineCC, setEngineCC] = useState("");
@@ -74,6 +74,7 @@ const [year, setYear] = useState("");
       formData.append("bathrooms", bathrooms);
       formData.append("phoneNumber", phoneNumber);
       formData.append("year", year);
+      formData.append("model", model);
 
 
 
@@ -197,6 +198,17 @@ const [year, setYear] = useState("");
       <option>Bus</option>
       <option>Van</option>
     </select>
+
+  <input
+      type="text"
+      value={model}
+      onChange={(e) => setModel(e.target.value)}
+      placeholder="Model"
+      className="w-full border border-gray-300 p-4 rounded-xl mb-4"
+    />
+
+
+
 
     <input
       type="number"
