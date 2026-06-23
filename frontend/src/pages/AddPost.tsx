@@ -13,11 +13,11 @@ function AddPost() {
   const [price, setPrice] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 const [year, setYear] = useState("");
-// const [mileage, setMileage] = useState("");
+const [mileage, setMileage] = useState("");
 const [model, setModel] = useState("");
-// const [gear, setGear] = useState("");
-// const [fuelType, setFuelType] = useState("");
-// const [engineCC, setEngineCC] = useState("");
+const [gear, setGear] = useState("");
+const [fuelType, setFuelType] = useState("");
+const [engineCC, setEngineCC] = useState("");
 
 
   const [bedrooms, setBedrooms] = useState("");
@@ -75,7 +75,10 @@ const [model, setModel] = useState("");
       formData.append("phoneNumber", phoneNumber);
       formData.append("year", year);
       formData.append("model", model);
-
+      formData.append("fuelType", fuelType);
+      formData.append("gear", gear);
+       formData.append("mileage", mileage);
+      formData.append("engineCC", engineCC);
 
 
       images.forEach((img) => {
@@ -225,6 +228,32 @@ const [model, setModel] = useState("");
       placeholder="Phone Number"
       className="w-full border border-gray-300 p-4 rounded-xl mb-4"
     />
+
+<div className="grid md:grid-cols-2 gap-4 mb-4">
+  <select
+    value={fuelType}
+    onChange={(e) => setFuelType(e.target.value)}
+    className="border border-gray-300 p-4 rounded-xl"
+  >
+    <option value="">Select Fuel Type</option>
+    <option value="Petrol">Petrol</option>
+    <option value="Diesel">Diesel</option>
+    <option value="Hybrid">Hybrid</option>
+    <option value="Electric">Electric</option>
+  </select>
+
+  <select
+    value={gear}
+    onChange={(e) => setGear(e.target.value)}
+    className="border border-gray-300 p-4 rounded-xl"
+  >
+    <option value="">Select Gear Type</option>
+    <option value="Automatic">Automatic</option>
+    <option value="Manual">Manual</option>
+  </select>
+</div>
+
+
   </>
 )}
         
