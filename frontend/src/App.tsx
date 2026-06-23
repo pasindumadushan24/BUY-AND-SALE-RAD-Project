@@ -38,6 +38,7 @@ function App() {
     </ProtectedRoute>
   }
 />
+
   <Route path="/post/:id" element={<PostDetails />} />
      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
