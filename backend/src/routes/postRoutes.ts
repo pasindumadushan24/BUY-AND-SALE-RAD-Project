@@ -7,7 +7,9 @@ import {
   getPosts,
     getMyPosts,
 //delete
+
       deletePost,
+       updatePost,
 
 } from "../controllers/postController";
 
@@ -42,7 +44,7 @@ router.get(
   getMyPosts
 );
 
-
+router.put("/:id", auth, updatePost);
 //delete post 
 router.delete("/:id", auth, deletePost);
 
