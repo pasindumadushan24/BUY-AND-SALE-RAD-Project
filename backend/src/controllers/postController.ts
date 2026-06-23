@@ -32,7 +32,7 @@ if (req.body.category === "Vehicles") {
     ? Number(req.body.year)
     : null;
 
-  // postData.mileage = req.body.mileage || null;
+  postData.mileage = req.body.mileage || null;
 
   postData.model = req.body.model || null;
 
@@ -40,9 +40,9 @@ if (req.body.category === "Vehicles") {
 
   postData.fuelType = req.body.fuelType || null;
 
-  // postData.engineCC = req.body.engineCC
-  //   ? Number(req.body.engineCC)
-  //   : null;
+  postData.engineCC = req.body.engineCC
+    ? Number(req.body.engineCC)
+    : null;
 }
 
     // property only fields
