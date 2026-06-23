@@ -86,6 +86,61 @@ export const getMyPosts = async (req: any, res: Response) => {
 
 
 
+export const updatePost = async (req: any, res: Response) => {
+  try {
+    const post = await Post.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({
+        message: "Post not found",
+      });
+    }
+
+    if (post.userId !== req.user.id) {
+      return res.status(403).json({
+        message: "Unauthorized",
+      });
+    }
+
+    const updatedPost = await Post.findByIdAndUpdate(
+      req.params.id,
+      {
+        title: req.body.title,
+        description: req.body.description,
+        price: Number(req.body.price),
+        city: req.body.city,
+        
+
+        phoneNumber: req.body.phoneNumber,
+        model: req.body.model,
+        year: Number(req.body.year),
+        gear: req.body.gear,
+        fuelType: req.body.fuelType,
+        mileage: Number(req.body.mileage),
+        engineCC: Number(req.body.engineCC),
+
+        bedrooms: req.body.bedrooms,
+        bathrooms: req.body.bathrooms,
+      },
+      { new: true }
+    );
+
+    return res.json(updatedPost);
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      message: "Update failed",
+    });
+  }
+};
+
+
+
+
+
+
+
 
 
 
