@@ -139,6 +139,24 @@ function PostDetails() {
     </span>{" "}
     {post.model}
   </p>
+
+  
+)}
+{post.category === "Vehicles" && post.gear && (
+  <p className="text-sm text-gray-500 mt-1">
+    <span className="font-semibold">
+      Gear:
+    </span>{" "}
+    {post.gear}
+  </p>
+)}
+{post.category === "Vehicles" && post.fuelType && (
+  <p className="text-sm text-gray-500 mt-1">
+    <span className="font-semibold">
+      Fuel Type:
+    </span>{" "}
+    {post.fuelType}
+  </p>
 )}
 
 
