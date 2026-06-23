@@ -142,6 +142,27 @@ function PostDetails() {
 
   
 )}
+
+{post.category === "Vehicles" && post.mileage && ( 
+  <p className="text-sm text-gray-500 mt-1">
+    <span className="font-semibold">
+      Mileage:
+    </span>{" "}
+    {post.mileage}
+  </p>
+)}
+
+{post.category === "Vehicles" && post.engineCC && ( 
+  <p className="text-sm text-gray-500 mt-1">
+    <span className="font-semibold">
+      Engine CC:
+    </span>{" "}
+    {post.engineCC}
+  </p>
+
+  
+)}
+
 {post.category === "Vehicles" && post.gear && (
   <p className="text-sm text-gray-500 mt-1">
     <span className="font-semibold">
