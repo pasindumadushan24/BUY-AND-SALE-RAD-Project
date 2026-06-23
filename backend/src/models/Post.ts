@@ -52,6 +52,7 @@ engineCC: {
   type: Number,
 },
 
+
   },
   {
     timestamps: true,
