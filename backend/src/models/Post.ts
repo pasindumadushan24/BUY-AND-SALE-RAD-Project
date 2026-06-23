@@ -33,7 +33,16 @@ model: {
 
 year: {
   type: Number,
+},
+
+gear: {
+  type: String,
+},
+
+fuelType: {
+  type: String,
 }
+
 
     // address: {
     //   type: String,
