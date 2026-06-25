@@ -73,13 +73,13 @@ const navigate = useNavigate();
     <div className="bg-gradient-to-b from-gray-50 to-gray-200 min-h-screen">
 
       {/* NAVBAR */}
-      <div className="bg-white shadow-md px-6 py-4 flex items-center justify-between">
+<div className="bg-white shadow-md px-4 md:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
 
         <h1 className="text-2xl font-bold text-indigo-600">
           QuickMarket
         </h1>
 
-        <div className="flex items-center gap-3">
+       <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 md:gap-3 w-full md:w-auto">
 
           <Link to="/login">
             <button className="px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-100 transition">
@@ -113,13 +113,13 @@ const navigate = useNavigate();
       </div>
 
       {/* HERO */}
-      <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white px-6 py-20 text-center">
+     <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white px-4 md:px-6 py-12 md:py-20 text-center">
 
-        <h1 className="text-5xl font-extrabold">
+       <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold">
           Discover, Buy & Sell Anything
         </h1>
 
-        <p className="mt-3 text-lg opacity-90">
+       <p className="mt-3 text-base md:text-lg opacity-90">
           A smarter marketplace for modern Sri Lanka
         </p>
 
@@ -149,7 +149,7 @@ const navigate = useNavigate();
       {/* CATEGORIES */}
       <div className="max-w-6xl mx-auto px-6 -mt-10">
 
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
 
           {categories.map((cat, i) => (
             <Link
@@ -175,7 +175,7 @@ const navigate = useNavigate();
       </div>
 
       {/* LISTINGS */}
-      <div className="max-w-6xl mx-auto px-6 mt-14">
+     <div className="max-w-6xl mx-auto px-4 md:px-6 mt-10 md:mt-14">
 
         <h2 className="text-2xl font-bold mb-6">
            Latest Listings
@@ -195,7 +195,7 @@ const navigate = useNavigate();
 
           </div>
         ) : (
-          <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {filteredListings.map((item: any) => (
               <div
@@ -212,7 +212,7 @@ const navigate = useNavigate();
                       "https://via.placeholder.com/400x300"
                     }
                     alt={item.title}
-                    className="h-52 w-full object-cover hover:scale-110 transition duration-500"
+                    className="h-48 sm:h-52 w-full object-cover hover:scale-110 transition duration-500"
                   />
 
                   <span className="absolute top-3 left-3 bg-black/80 text-white text-xs px-3 py-1 rounded-full">
@@ -222,7 +222,7 @@ const navigate = useNavigate();
                 </div>
 
 
-                <div className="p-5">
+                <div className="p-4 md:p-5">
 
                   <h3 className="font-bold text-lg">
                     {item.title}
@@ -275,7 +275,7 @@ const navigate = useNavigate();
       </p>
 
       {/* Navigation */}
-      <div className="flex gap-6 text-sm mt-6">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm mt-6">
         <a
           href="/"
           className="hover:text-indigo-400 transition"
