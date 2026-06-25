@@ -114,16 +114,18 @@ const [engineCC, setEngineCC] = useState("");
 
   return (
 
-  <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-10 px-4">
-    <div className="max-w-3xl mx-auto">
-    {/* NAVBAR */}
-<div className="bg-white shadow-md px-6 py-4 flex items-center justify-between mb-6 rounded-xl">
+  // <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-10 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-6 sm:py-8 md:py-10 px-3 sm:px-4 md:px-6">
+    <div className="w-full max-w-4xl mx-auto">
 
-  <h1 className="text-2xl font-bold text-indigo-600">
+    {/* NAVBAR */}
+<div className="bg-white shadow-md px-4 sm:px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6 rounded-xl">
+
+  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-600 text-center md:text-left">
     QuickMarket
   </h1>
 
-  <div className="flex items-center gap-3">
+  <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 sm:gap-3">
 
     <button
             onClick={goHome}
@@ -154,10 +156,10 @@ const [engineCC, setEngineCC] = useState("");
   </div>
 </div>
 
-      <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-8">
+      <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8">
       
 
-        <h1 className="text-4xl font-extrabold text-center mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
           Create New Ad
         </h1>
 
