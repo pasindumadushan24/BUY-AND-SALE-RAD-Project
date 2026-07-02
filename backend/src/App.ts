@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import vehicleRoutes from "./src/routes/vehicleRoutes";
+import vehicleRoutes from "./routes/vehicleRoutes";
 
 const app = express();
 
