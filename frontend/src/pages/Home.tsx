@@ -28,7 +28,7 @@ const navigate = useNavigate();
   const loadPosts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/posts"
+        "https://gracious-liberation-production-245a.up.railway.app/api/posts"
       );
 
       setListings(res.data);

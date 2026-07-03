@@ -20,7 +20,7 @@ export default function Register() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://gracious-liberation-production-245a.up.railway.app/api/auth/register",
         {
           name,
           email,

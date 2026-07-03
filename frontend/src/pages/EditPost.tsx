@@ -29,7 +29,7 @@ function EditPost() {
 
   const loadPost = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/posts");
+      const res = await axios.get("https://gracious-liberation-production-245a.up.railway.app/api/posts");
       const post = res.data.find((p: any) => p._id === id);
 
       if (!post) return;
@@ -61,7 +61,7 @@ function EditPost() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/posts/${id}`,
+        `https://gracious-liberation-production-245a.up.railway.app/api/posts/${id}`,
         {
           category,
           subCategory,

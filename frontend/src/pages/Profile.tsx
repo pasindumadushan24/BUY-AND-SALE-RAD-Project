@@ -21,7 +21,7 @@ function Profile() {
     const token = localStorage.getItem("token");
 
     await axios.delete(
-      `http://localhost:5000/api/posts/${id}`,
+      `https://gracious-liberation-production-245a.up.railway.app/api/posts/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ function Profile() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/posts/my-posts",
+        "https://gracious-liberation-production-245a.up.railway.app/api/posts/my-posts",
         {
           headers: {
             Authorization: `Bearer ${token}`,

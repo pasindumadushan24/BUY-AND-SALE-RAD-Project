@@ -12,7 +12,7 @@ function CategoryPage() {
   
 
   const loadPosts = async () => {
-    const res = await axios.get("http://localhost:5000/api/posts");
+    const res = await axios.get("https://gracious-liberation-production-245a.up.railway.app/api/posts");
     setListings(res.data);
   };
 

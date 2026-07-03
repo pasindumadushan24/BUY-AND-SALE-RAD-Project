@@ -9,7 +9,7 @@ const Post_1 = __importDefault(require("../models/Post"));
 const createPost = async (req, res) => {
     try {
         const files = req.files || [];
-        const images = files.map((file) => `http://localhost:5000/uploads/${file.filename}`);
+        const images = files.map((file) => `https://gracious-liberation-production-245a.up.railway.app/uploads/${file.filename}`);
         const postData = {
             userId: req.user.id,
             category: req.body.category,

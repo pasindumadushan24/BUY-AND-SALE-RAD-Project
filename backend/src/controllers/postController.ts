@@ -7,7 +7,7 @@ export const createPost = async (req: Request, res: Response) => {
     const files = (req.files as Express.Multer.File[]) || [];
 
     const images = files.map(
-      (file) => `http://localhost:5000/uploads/${file.filename}`
+      (file) => `https://gracious-liberation-production-245a.up.railway.app/uploads/${file.filename}`
     );
 
     const postData: any = {

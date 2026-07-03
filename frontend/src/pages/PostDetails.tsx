@@ -16,7 +16,7 @@ function PostDetails() {
   const loadPost = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/posts"
+        "https://gracious-liberation-production-245a.up.railway.app/api/posts"
       );
 
       const found = res.data.find(

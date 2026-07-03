@@ -85,7 +85,7 @@ const [engineCC, setEngineCC] = useState("");
         formData.append("images", img);
       });
 
-      await axios.post("http://localhost:5000/api/posts", formData, {
+      await axios.post("https://gracious-liberation-production-245a.up.railway.app/api/posts", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
